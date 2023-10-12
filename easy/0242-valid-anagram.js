@@ -41,3 +41,12 @@ var isAnagram = function(s, t) {
     }
     return true;
 };
+
+// Alternate, shorter solution:
+// Turn strings into arrays of characters, sort the arrays,
+// turn the arrays back into strings and compare them
+// var isAnagram = function(s, t) {
+//     let sSorted = s.split("").sort().join("");
+//     let tSorted = t.split("").sort().join("");
+//     return sSorted === tSorted;
+// };
