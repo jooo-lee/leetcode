@@ -10,13 +10,13 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function(root) {
+var invertTree = function (root) {
     // Current tree empty
     if (root == null) return null;
 
     // Swap children of current root node
     let tmp = root.left;
-    root.left = root.right
+    root.left = root.right;
     root.right = tmp;
 
     // Recursive calls to continue swapping children

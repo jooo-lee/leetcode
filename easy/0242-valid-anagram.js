@@ -3,8 +3,8 @@
  * @param {string} t
  * @return {boolean}
  */
-var isAnagram = function(s, t) {
-    // Create a hash map 
+var isAnagram = function (s, t) {
+    // Create a hash map
     const map = new Map();
 
     // For each char in s, check if it is a key in our hash map
@@ -13,7 +13,7 @@ var isAnagram = function(s, t) {
     for (let i = 0; i < s.length; i++) {
         if (map.has(s[i])) {
             // Note: we can't do map.get(s[i])++, as map.get()
-            // will return a constant, and we can't increment or 
+            // will return a constant, and we can't increment or
             // decrement a constant (something like 2++ would give
             // the error: Invalid left-hand side expression in postfix operation)
             map.set(s[i], map.get(s[i]) + 1);
@@ -45,7 +45,7 @@ var isAnagram = function(s, t) {
 // Alternate, shorter solution:
 // Turn strings into arrays of characters, sort the arrays,
 // turn the arrays back into strings and compare them
-// var isAnagram = function(s, t) {
+// var isAnagram = function (s, t) {
 //     let sSorted = s.split("").sort().join("");
 //     let tSorted = t.split("").sort().join("");
 //     return sSorted === tSorted;

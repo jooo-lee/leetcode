@@ -3,8 +3,8 @@
  * @param {number} target
  * @return {number}
  */
-var search = function(nums, target) {
-    // This will be O(log n) time complexity because we are 
+var search = function (nums, target) {
+    // This will be O(log n) time complexity because we are
     // splitting the search area in half each time we compare target
 
     // Keep track of bounds of search area
@@ -29,7 +29,7 @@ var search = function(nums, target) {
             left = mid + 1;
         }
     }
-    
+
     // Target not found
     return -1;
 };

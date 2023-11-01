@@ -5,7 +5,7 @@
  * @param {number} color
  * @return {number[][]}
  */
-var floodFill = function(image, sr, sc, color) {
+var floodFill = function (image, sr, sc, color) {
     // If starting pixel's color is equal to color, return original image
     if (image[sr][sc] == color) return image;
 

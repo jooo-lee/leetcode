@@ -10,28 +10,28 @@
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeTwoLists = function(list1, list2) {
-    // next of dummy will be head of output LL
+var mergeTwoLists = function (list1, list2) {
+    // Next of dummy will be head of output LL
     const dummy = new ListNode();
     let tail = dummy;
 
     while (list1 && list2) {
-      if (list1.val <= list2.val) {
-        tail.next = list1; // adding list1 ListNode to output LL 
-        list1 = list1.next;
-      } else {
-        tail.next = list2; // adding list2 ListNode to output LL 
-        list2 = list2.next;
-      }
-      tail = tail.next; // update tail
+        if (list1.val <= list2.val) {
+            tail.next = list1; // Adding list1 ListNode to output LL
+            list1 = list1.next;
+        } else {
+            tail.next = list2; // Adding list2 ListNode to output LL
+            list2 = list2.next;
+        }
+        tail = tail.next; // Update tail
     }
 
-    // add rest of remaining other list if we reach end of one list
+    // Add rest of remaining other list if we reach end of one list
     if (list1) {
-      tail.next = list1;
+        tail.next = list1;
     } else if (list2) {
-      tail.next = list2;
+        tail.next = list2;
     }
-    
+
     return dummy.next;
 };
