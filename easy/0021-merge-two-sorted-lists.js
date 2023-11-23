@@ -11,12 +11,20 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function (list1, list2) {
-    // Next of dummy will be head of output LL
+    // Iterative solution
+
+    /* 
+    Since we don't know which ListNode will be the first ListNode of our output LL,
+    we use a dummy node so that we don't need to handle adding a ListNode to
+    an empty LL - all ListNode insertions are to the end of a non-empty LL.
+    This way our first ListNode doesn't need to be a "special case" and this
+    simplifies our code greatly.
+    */
     const dummy = new ListNode();
-    let tail = dummy;
+    let tail = dummy; // Keep track of tail so we can append ListNodes to output LL
 
     while (list1 && list2) {
-        if (list1.val <= list2.val) {
+        if (list1.val < list2.val) {
             tail.next = list1; // Adding list1 ListNode to output LL
             list1 = list1.next;
         } else {
@@ -33,5 +41,11 @@ var mergeTwoLists = function (list1, list2) {
         tail.next = list2;
     }
 
+    // Return the head of the output LL
     return dummy.next;
 };
+
+// Time complexity: O(n + m)
+// Space complexity: O(1)
+// where n is the length of list1
+// and m is the length of list2
