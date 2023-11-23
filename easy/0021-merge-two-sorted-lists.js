@@ -49,3 +49,29 @@ var mergeTwoLists = function (list1, list2) {
 // Space complexity: O(1)
 // where n is the length of list1
 // and m is the length of list2
+
+// ------------------------- Alternate solution -------------------------
+var mergeTwoLists = function (list1, list2) {
+    // Recursive solution
+
+    // Base case
+    // The end of a list has been reached, add the remaining ListNodes of
+    // the other list to the output LL
+    // Also handles edge cases where one or both LLs are empty
+    if (!list1) return list2;
+    if (!list2) return list1;
+
+    // Make recursive calls to add ListNodes to output LL
+    if (list1.val < list2.val) {
+        list1.next = mergeTwoLists(list1.next, list2);
+        return list1;
+    } else {
+        list2.next = mergeTwoLists(list1, list2.next);
+        return list2;
+    }
+};
+
+// Time complexity: O(n + m)
+// Space complexity: O(n + m) - recursive call stack
+// where n is the length of list1
+// and m is the length of list2
