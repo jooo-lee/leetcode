@@ -38,30 +38,31 @@ var reverseList = function (head) {
 // where n is the length of our LL
 
 // ------------------------- Alternate solution -------------------------
-// var reverseList = function (head) {
-//     // Recursive solution
 
-//     // Base case - if we have an empty LL or we have reached the
-//     // end of the LL (in both cases we have a reversed LL - empty
-//     // LL is reversed and LL of one ListNode is reversed)
-//     if (!head) return head;
+var reverseList = function (head) {
+    // Recursive solution
 
-//     // Keep track of head of reversed LL
-//     let newHead = head;
-//     // We have not reached the end of the LL, keep going - O(n)
-//     if (head.next) {
-//         // Make recursive call, reverse the rest of the LL
-//         newHead = reverseList(head.next);
+    // Base case - if we have an empty LL or we have reached the
+    // end of the LL (in both cases we have a reversed LL - empty
+    // LL is reversed and LL of one ListNode is reversed)
+    if (!head) return head;
 
-//         // Reverse link (append current ListNode to reversed LL)
-//         head.next.next = head;
+    // Keep track of head of reversed LL
+    let newHead = head;
+    // We have not reached the end of the LL, keep going - O(n)
+    if (head.next) {
+        // Make recursive call, reverse the rest of the LL
+        newHead = reverseList(head.next);
 
-//         // Set current ListNode (current tail of reversed LL) to point to null
-//         head.next = null;
-//     }
+        // Reverse link (append current ListNode to reversed LL)
+        head.next.next = head;
 
-//     return newHead;
-// };
+        // Set current ListNode (current tail of reversed LL) to point to null
+        head.next = null;
+    }
+
+    return newHead;
+};
 
 // Time complexity: O(n)
 // Space complexity: O(n) - we are making n recursive calls (n calls in our call stack)

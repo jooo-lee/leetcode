@@ -51,14 +51,16 @@ var isAnagram = function (s, t) {
 // where n is the length of s or t
 
 // ---------------------- Alternate solution: ----------------------
-// Turn strings into arrays of characters, sort the arrays,
-// turn the arrays back into strings and compare them
-// var isAnagram = function (s, t) {
-//     if (s.length !== t.length) return false;
-//     let sSorted = s.split("").sort().join("");
-//     let tSorted = t.split("").sort().join("");
-//     return sSorted === tSorted;
-// };
+
+var isAnagram = function (s, t) {
+    // Turn strings into arrays of characters, sort the arrays,
+    // turn the arrays back into strings and compare them
+    if (s.length !== t.length) return false;
+    let sSorted = s.split("").sort().join("");
+    let tSorted = t.split("").sort().join("");
+    return sSorted === tSorted;
+};
+
 // Sort time: O(nlog(n))
 // Split and join time: O(n)
 // Split space: O(n)

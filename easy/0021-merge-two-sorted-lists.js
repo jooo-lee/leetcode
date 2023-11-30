@@ -51,6 +51,7 @@ var mergeTwoLists = function (list1, list2) {
 // and m is the length of list2
 
 // ------------------------- Alternate solution -------------------------
+
 var mergeTwoLists = function (list1, list2) {
     // Recursive solution
 
