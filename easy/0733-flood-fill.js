@@ -35,3 +35,8 @@ function fill(image, sr, sc, startColor, newColor) {
     fill(image, sr, sc + 1, startColor, newColor);
     fill(image, sr, sc - 1, startColor, newColor);
 }
+
+// Time complexity: O(mn)
+// Space complexity: O(mn)
+// where m is the number of rows of image
+// and n is the number of columns of image

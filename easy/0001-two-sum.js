@@ -26,3 +26,4 @@ var twoSum = function (nums, target) {
 
 // Time complexity: O(n)
 // Space complexity: O(n)
+// where n is the length of nums
