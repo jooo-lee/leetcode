@@ -14,7 +14,7 @@ var topKFrequent = function (nums, k) {
     }
   });
 
-  // Sort hashmap in ascending order of values/occurences
+  // Sort hashmap in descending order of values/occurences
   const sortedMap = [...occurences].sort((a, b) => b[1] - a[1]);
 
   const res = [];
