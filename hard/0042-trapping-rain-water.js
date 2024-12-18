@@ -1,3 +1,31 @@
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var trap = function (height) {
+  let maxWater = 0;
+  let l = 0;
+  let r = height.length - 1;
+  let maxL = height[l];
+  let maxR = height[r];
+
+  while (l < r) {
+    if (maxL < maxR) {
+      l++;
+      maxWater += Math.max(0, Math.min(maxL, maxR) - height[l]);
+      maxL = Math.max(maxL, height[l]);
+    } else {
+      r--;
+      maxWater += Math.max(0, Math.min(maxL, maxR) - height[r]);
+      maxR = Math.max(maxR, height[r]);
+    }
+  }
+  return maxWater;
+};
+
+// Time complexity: O(n)
+// Space complexity: O(1)
+
 // -------------------------- O(n) memory solution --------------------------
 /**
  * @param {number[]} height
