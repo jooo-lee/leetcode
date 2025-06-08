@@ -1,7 +1,31 @@
 from typing import List
 
 
+#  Time complexity: O(n)
+#  Space complexity: O(1) since output array does not count as extra space
 class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+
+        # Preallocate space for list
+        res = [1] * n
+
+        prefixProd = 1
+        for i in range(n):
+            res[i] = prefixProd
+            prefixProd *= nums[i]
+
+        suffixProd = 1
+        for i in range(n - 1, -1, -1):
+            res[i] *= suffixProd
+            suffixProd *= nums[i]
+
+        return res
+
+
+# Time complexity: O(n)
+# Space complexity: O(n)
+class Solution2:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         # Create prefix arr where each element is the product of all elements before it
         # (first element must be 1 rather than 0 as 0 will make all subsequent products 0 as well)
